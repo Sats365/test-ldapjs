@@ -42,7 +42,7 @@ async function testLdapConnection() {
       const opts = {
         filter: LDAP_SEARCH_FILTER,
         scope: "sub",
-        attributes: ["dn"],
+        attributes: ["dn", "cn", "mail"],
       };
 
       client.search(LDAP_SEARCH_BASE, opts, (err, res) => {
@@ -53,7 +53,10 @@ async function testLdapConnection() {
         }
 
         res.on("searchEntry", (entry) => {
-          console.log("Entry:", entry.objectName);
+          console.log("Entry:", {
+            mail: entry?.attributes?.[0]?.values?.[0],
+            name: entry?.attributes?.[1]?.values?.[0],
+          });
         });
 
         res.on("searchReference", (referral) => {

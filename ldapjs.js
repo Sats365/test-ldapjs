@@ -2,6 +2,7 @@
  * LDAP CONNECTION TEST SCRIPT
  * Run with: node ldap_test.js
  */
+import ldap from "ldapjs";
 
 // ===== CONFIG SECTION =====
 const LDAP_URL = "ldap://localhost:389";
@@ -11,8 +12,6 @@ const LDAP_SEARCH_BASE = "dc=example,dc=com";
 const LDAP_SEARCH_FILTER = "(objectClass=*)";
 
 // ===========================
-
-const ldap = require("ldapjs");
 
 async function testLdapConnection() {
   const client = ldap.createClient({

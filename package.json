@@ -1,14 +1,21 @@
 {
-  "name": "test-ldapjs",
+  "name": "test-ldap",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node ldapjs.js",
+    "start:ts": "tsc && node dist/ldapts.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "ldapjs": "^3.0.7"
+    "ldapjs": "^3.0.7",
+    "ldapts": "^8.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
 }

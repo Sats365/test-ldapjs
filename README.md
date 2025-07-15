@@ -23,14 +23,14 @@
 
 ## ⚙️ Настройка
 
-Открой файл `index.js` и отредактируй параметры вверху:
+Открой файл `ldapjs.js` (или `ldapts.ts` для TypeScript версии) и отредактируй параметры вверху:
 
 ```js
-const LDAP_URL = 'ldap://localhost:389';
-const LDAP_BIND_DN = 'cn=admin,dc=example,dc=com';
-const LDAP_BIND_PASSWORD = 'adminpassword';
-const LDAP_SEARCH_BASE = 'dc=example,dc=com';
-const LDAP_SEARCH_FILTER = '(objectClass=*)';
+const LDAP_URL = "ldap://localhost:389";
+const LDAP_BIND_DN = "cn=admin,dc=example,dc=com";
+const LDAP_BIND_PASSWORD = "adminpassword";
+const LDAP_SEARCH_BASE = "dc=example,dc=com";
+const LDAP_SEARCH_FILTER = "(objectClass=*)";
 ```
 
 ---
@@ -40,7 +40,11 @@ const LDAP_SEARCH_FILTER = '(objectClass=*)';
 Для запуска скрипта выполни:
 
 ```bash
+# JavaScript версия
 npm run start
+
+# TypeScript версия
+npm run start:ts
 ```
 
 ---
@@ -59,3 +63,4 @@ npm run start
 - Убедись, что LDAP-сервер доступен по указанному адресу и порту.
 - Проверь правильность DN и пароля.
 - Для LDAPS (SSL) используй `ldaps://` в `LDAP_URL`.
+- В проекте есть две версии: JavaScript (`ldapjs.js`) и TypeScript (`ldapts.ts`).
